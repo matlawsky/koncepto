@@ -14,6 +14,7 @@ import 'package:koncepto/pages/404/error.dart';
 import 'package:koncepto/pages/authentication/authentication.dart';
 import 'package:koncepto/routing/routes.dart';
 import 'package:koncepto/widgets/no_animations_transition_theme.dart';
+import 'package:auto_route/auto_route.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,7 +40,7 @@ class KonceptoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialRoute: '/auth',
+      initialRoute: '/',
       unknownRoute: GetPage(
           name: "/not-found",
           page: () => const PageNotFound(),
@@ -47,30 +48,30 @@ class KonceptoApp extends StatelessWidget {
       getPages: [
         GetPage(name: rootRoute, page: () => SiteLayout()),
         GetPage(
-            name: authenticationPageRoute, page: () => const AuthenticationPage()),
+            name: authenticationPageRoute,
+            page: () => const AuthenticationPage()),
       ],
       debugShowCheckedModeBanner: false,
       title: 'koncepto',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        textTheme: GoogleFonts.robotoTextTheme(Theme.of(context).textTheme).apply(bodyColor: Colors.black54),
+          scaffoldBackgroundColor: Colors.white,
+          textTheme: GoogleFonts.robotoTextTheme(Theme.of(context).textTheme)
+              .apply(bodyColor: Colors.black54),
           //bodyText1: TextStyle(color: Colors.black54),
-        pageTransitionsTheme: PageTransitionsTheme(
-          builders: kIsWeb ? {
-            for (final platform in TargetPlatform.values)
-              platform:const NoTransitionsBuilder(),
-          } : const {
-            TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
-            TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
-          }),
+          // pageTransitionsTheme: PageTransitionsTheme(
+          //   builders: kIsWeb ? {
+          //     for (final platform in TargetPlatform.values)
+          //       platform:const NoTransitionsBuilder(),
+          //   } : const {
+          //     TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
+          //     TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+          //   }),
 
-        //   } 
-        // ),
-        primaryColor: Colors.white
-      ),
-      
+          //   }
+          // ),
+          primaryColor: Colors.white),
+
       // home: AuthenticationPage(),
     );
   }
 }
-

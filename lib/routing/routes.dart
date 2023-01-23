@@ -1,5 +1,5 @@
 const rootRoute = "/";
-const overviewPageDisplayName= "Overview";
+const overviewPageDisplayName = "Overview";
 const overviewPageRoute = "/overview";
 
 const projectsPageDisplayName = "Projects";
@@ -12,7 +12,7 @@ const viewsPageDisplayName = "Views";
 const viewsPageRoute = "/views";
 
 const usersPageDisplayName = "Users";
-const usersPageRoute = "/users";
+const replPageRoute = "/repl";
 
 const authenticationPageDisplayName = "Log Out";
 const authenticationPageRoute = "/auth";
@@ -25,10 +25,9 @@ class MenuItem {
 }
 
 List<MenuItem> sideMenuItems = [
-  MenuItem(overviewPageDisplayName,overviewPageRoute),
-  MenuItem(projectsPageDisplayName,projectsPageRoute),
-  MenuItem(devicesPageDisplayName,devicesPageRoute),
-  MenuItem(usersPageDisplayName,usersPageRoute),
-
-  MenuItem(authenticationPageDisplayName,authenticationPageRoute)
+  MenuItem(overviewPageDisplayName, overviewPageRoute),
+  MenuItem(projectsPageDisplayName, projectsPageRoute),
+  MenuItem(devicesPageDisplayName, devicesPageRoute),
+  MenuItem(usersPageDisplayName, replPageRoute),
+  MenuItem(authenticationPageDisplayName, authenticationPageRoute)
 ];

@@ -26,7 +26,11 @@ dependencies:
   intl: ^0.17.0
   http: ^0.13.5
   flutter_secure_storage: ^6.0.0
-
+  flutter_libserialport: ^0.3.0
+  ffi: ^2.0.1
+  usb_device: ^0.0.7
+  auto_route: ^5.0.4
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
