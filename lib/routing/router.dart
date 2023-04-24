@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:koncepto/pages/authentication/authentication.dart';
 import 'package:koncepto/pages/devices/repl.dart';
 import 'package:koncepto/pages/overview/overview.dart';
@@ -26,14 +27,9 @@ Route<dynamic>? generateRoute(RouteSettings settings) {
     // case FAQPageRoute:
     //   return _getPageRoute(FaqPage());
     case authenticationPageRoute:
-      return _getPageRoute(const AuthenticationPage());
+      return _getPageRoute(AuthenticationPage());
   }
   return null;
-}
-
-PageRoute _logout(Widget child) {
-  // Navigator.pop(context);
-  return MaterialPageRoute(builder: (context) => child);
 }
 
 PageRoute _getPageRoute(Widget child) {

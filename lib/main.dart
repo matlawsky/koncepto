@@ -18,15 +18,15 @@ import 'package:auto_route/auto_route.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Hive.initFlutter();
-  Hive.registerAdapter(UserAdapter());
-  Hive.registerAdapter(DeviceAdapter());
-  Hive.registerAdapter(ProjectAdapter());
-  Hive.registerAdapter(DataAdapter());
-  await Hive.openBox<User>('users');
-  await Hive.openBox<Project>('projects');
-  await Hive.openBox<Device>('devices');
-  await Hive.openBox<Data>('data');
+  // await Hive.initFlutter();
+  // Hive.registerAdapter(UserAdapter());
+  // Hive.registerAdapter(DeviceAdapter());
+  // Hive.registerAdapter(ProjectAdapter());
+  // Hive.registerAdapter(DataAdapter());
+  // await Hive.openBox<User>('users');
+  // await Hive.openBox<Project>('projects');
+  // await Hive.openBox<Device>('devices');
+  // await Hive.openBox<Data>('data');
   Get.put(MenuController());
   Get.put(NavigationController());
   runApp(const KonceptoApp());
@@ -49,7 +49,8 @@ class KonceptoApp extends StatelessWidget {
         GetPage(name: rootRoute, page: () => SiteLayout()),
         GetPage(
             name: authenticationPageRoute,
-            page: () => const AuthenticationPage()),
+            page: () => AuthenticationPage(),
+            maintainState: false),
       ],
       debugShowCheckedModeBanner: false,
       title: 'koncepto',
